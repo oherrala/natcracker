@@ -11,10 +11,13 @@
   <script src="index.js"></script>
   <script>
     window.onload = function () {
-        showIPs = function(ip) {
-            document.getElementById("app").innerText += ip + "\n";
+        show_ips = function(items) {
+            elem = document.getElementById("app");
+            for(item of items) {
+                elem.textContent += JSON.stringify(item) + "\n";
+            }
         };
-        natCracker(showIPs);
+        nat_cracker().then(show_ips);
     }
   </script>
 </body>
